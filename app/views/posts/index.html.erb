@@ -2,6 +2,7 @@
     <div class="post_wrapper">
         <h2 class ="title"><%=link_to p.title, p %></h2>
         <p class="data"><%= time_ago_in_words p.created_at%> ago </p>
+        <p class="body"><%=truncate(p.body, length: 100)%>
 
     </div>
 <%end%>
