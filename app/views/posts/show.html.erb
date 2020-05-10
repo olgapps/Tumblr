@@ -6,14 +6,14 @@
         <%=@post.body%>
     </p>
     <%=link_to "back", posts_path%>
+    <%if user_signed_in?%>
     <%=link_to "edit post", edit_post_path(@post)%>
     <%= link_to "destroy post", post_path(@post), method: :delete, data: {confirm: "are you sure"}%>
-
+<%end%>
     <div id="comments">
         <h2><%=@post.comments.count%> Comments </h2>
         <%= render @post.comments%>
         <h3> join discussion </h3>
         <%=render "comments/form"%>
         </div>
-
 </div>
